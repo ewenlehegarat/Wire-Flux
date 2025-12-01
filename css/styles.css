@@ -1,0 +1,436 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jacques+Francois&display=swap");
+*, ::before, ::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --backgroundColor: #4A2082;
+  --primaryColor: #7D43AF;
+  --black: #000000;
+  --white: #ffffff;
+}
+
+body {
+  font-family: "Montserrat";
+  background-color: var(--backgroundColor);
+  color: var(--white);
+}
+
+header {
+  height: 80px;
+  background-color: var(--primaryColor);
+  padding: 17px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .logo {
+  display: flex;
+  align-items: center;
+}
+header .logo img {
+  width: 50px;
+}
+header .left .list_a {
+  display: none;
+}
+header .left .list_a div a {
+  color: var(--white);
+  z-index: 2;
+}
+header .left .list_a .nav_film:hover a, header .left .list_a .nav_serie:hover a, header .left .list_a .nav_anime:hover a {
+  color: var(--primaryColor);
+}
+header .left .list_a div:after {
+  content: "";
+  width: 80px;
+  height: 80px;
+  background-color: var(--white);
+  top: -80px;
+  position: absolute;
+  transition: transform 0.4s ease;
+}
+header .left .list_a .nav_film:hover:after, header .left .list_a .nav_serie:hover:after, header .left .list_a .nav_anime:hover:after {
+  transform: translateY(80px);
+}
+header label {
+  cursor: pointer;
+}
+header nav a {
+  display: none;
+}
+
+h1 {
+  font-family: "Jacques Francois";
+  font-size: 30px;
+  font-weight: 500;
+  margin-left: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: var(--white);
+}
+
+nav input {
+  width: 30px;
+  display: none;
+}
+
+label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+}
+
+.button_depliant {
+  width: 30px;
+  height: 30px;
+  position: relative;
+}
+.button_depliant span {
+  transition: transform 0.3s ease;
+  border-radius: 50px;
+  width: 25px;
+  height: 2px;
+  background-color: var(--white);
+  position: absolute;
+  right: 0;
+}
+.button_depliant span:nth-child(1) {
+  top: 5px;
+}
+.button_depliant span:nth-child(3) {
+  bottom: 5px;
+}
+
+.display {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.display .home {
+  border-bottom: 2px solid var(--white);
+}
+.display div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  background-color: var(--primaryColor);
+  width: 100%;
+  position: relative;
+}
+.display div a {
+  font-size: 30px;
+  color: var(--white);
+}
+.display div:after {
+  content: "";
+  background-color: var(--white);
+  width: 100%;
+  height: 80px;
+  position: absolute;
+  display: none;
+}
+.display div:hover:after {
+  display: block;
+}
+.display .s_inscrire a {
+  font-weight: 600;
+  cursor: pointer;
+}
+.display .se_connecter a {
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--black);
+  padding: 15px 24px;
+  background-color: var(--white);
+  border-radius: 50px;
+  border: 3px solid var(--black);
+}
+.display .se_connecter a:hover {
+  background-color: var(--primaryColor);
+  color: var(--white);
+  border-color: var(--white);
+}
+
+header:has(input:checked) ~ .display {
+  display: flex;
+}
+
+header input:checked + .button_depliant span:nth-child(1) {
+  transform: rotate(45deg);
+  top: 50%;
+}
+
+header input:checked + .button_depliant span:nth-child(2) {
+  opacity: 0;
+}
+
+header input:checked + .button_depliant span:nth-child(3) {
+  transform: rotate(-45deg);
+  top: 50%;
+}
+
+main {
+  padding: 0 32px;
+}
+
+.slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 41px 0;
+  height: 152px;
+}
+.slider .slider_image {
+  background: no-repeat url(/img/slider_film_1.png);
+  background-size: 100%;
+  padding: 5px 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+}
+.slider .slider_image h2 {
+  font-size: 13px;
+  font-weight: bold;
+  color: var(--white);
+  align-self: flex-end;
+}
+.slider .slider_image .bouton_droite {
+  margin-left: 30px;
+}
+.slider img {
+  width: 30px;
+}
+
+.films h3 {
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+.films .films_flex {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.films .films_flex img {
+  width: 150px;
+}
+.films .films_flex .button {
+  background-color: var(--primaryColor);
+  width: 150px;
+  height: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  margin-top: 10px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+.films .films_flex .button:hover {
+  background-color: var(--white);
+  box-shadow: 0 4px 10px var(--primaryColor), 0 4px 10px var(--primaryColor);
+  transform: translateY(-5px);
+}
+.films .films_flex .button:hover a {
+  color: var(--black);
+}
+.films .films_flex a {
+  font-size: 13px;
+}
+
+.series {
+  margin-top: 34px;
+}
+.series h3 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 11px;
+}
+.series .selection_series {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7.63px;
+}
+.series .selection_series img {
+  border-radius: 8px;
+  margin-top: 5px;
+  width: 30px;
+  height: 122.11px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 50% 3%;
+     object-position: 50% 3%;
+}
+.series .selection_series .the_rookie {
+  width: 271.68px;
+}
+.series .selection_series .orange_is_the_new_black {
+  -o-object-position: 95%;
+     object-position: 95%;
+}
+.series .selection_series .the_mandalorian {
+  -o-object-position: 44.5%;
+     object-position: 44.5%;
+}
+
+footer {
+  margin-top: 206px;
+  background-color: var(--primaryColor);
+  padding: 20px;
+}
+footer .logo_footer {
+  display: flex;
+  align-items: center;
+}
+footer .logo_footer img {
+  width: 50px;
+}
+footer .logo_footer h2 {
+  font-family: "Jacques Francois";
+  font-size: 28px;
+  font-weight: 500;
+  margin-left: 7.5px;
+}
+footer p {
+  margin: 37px 15px 0 15px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+@media screen and (min-width: 413px) {
+  header .left {
+    display: flex;
+    align-items: center;
+  }
+  header .left .logo img {
+    width: 100%;
+  }
+  header .left .list_a {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  header .left .list_a .nav_home {
+    margin-left: 42px;
+    border-bottom: 3px solid var(--white);
+  }
+  header .left .list_a div {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    align-items: center;
+  }
+  header .left .list_a div a {
+    font-size: 20px;
+  }
+  header nav {
+    display: flex;
+    align-items: center;
+  }
+  header nav .inscrire {
+    font-size: 17px;
+    font-weight: 600;
+  }
+  header nav .connecter {
+    margin-left: 10px;
+    padding: 15px 20px;
+    background-color: var(--white);
+    color: var(--black);
+    border: 3px solid var(--black);
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  header nav .connecter:hover {
+    background-color: var(--primaryColor);
+    color: var(--white);
+    border-color: var(--white);
+  }
+  header nav a {
+    display: flex;
+  }
+  h1 {
+    font-size: 35px;
+  }
+  .button_depliant {
+    display: none;
+  }
+  .slider {
+    height: 500px;
+    padding: 0 150px;
+  }
+  .slider .slider_image {
+    padding: 30px 25px;
+  }
+  .slider .slider_image h2 {
+    font-size: 35px;
+  }
+  .slider .slider_image .bouton_droite {
+    margin-left: 409px;
+  }
+  .slider img {
+    width: 50px;
+  }
+  .films h3 {
+    font-size: 30px;
+    margin-left: 150px;
+  }
+  .films .films_flex img {
+    width: 200px;
+  }
+  .films .films_flex .button {
+    width: 200px;
+    height: 50px;
+  }
+  .films .films_flex a {
+    font-size: 15px;
+  }
+  .series h3 {
+    font-size: 30px;
+    margin-left: 150px;
+  }
+  .series .selection_series {
+    gap: 25px;
+  }
+  .series .selection_series img {
+    border-radius: 15px;
+    width: 100px;
+    height: 400px;
+  }
+  .series .selection_series .the_rookie {
+    width: 890px;
+  }
+  footer {
+    padding: 57px 64px;
+  }
+  footer .logo_footer img {
+    width: 63px;
+  }
+  footer .logo_footer h2 {
+    font-size: 35px;
+  }
+  footer p {
+    font-size: 28px;
+    width: 638px;
+    margin: 0;
+    margin-top: 24.5px;
+  }
+}/*# sourceMappingURL=styles.css.map */
