@@ -191,7 +191,7 @@ main {
   border-radius: 10px;
 }
 .slider .slider_image {
-  background: no-repeat url(img/slider_film_1.png);
+  background: no-repeat url(/img/slider_film_1.png);
   background-size: 100%;
   padding: 5px 15px;
   display: flex;
