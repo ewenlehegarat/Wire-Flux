@@ -218,6 +218,9 @@ main{
         .bouton_droite{
             margin-left: 30px;
         }
+        img{
+            cursor: pointer;
+        }
     }
     img{
         width: 30px;
@@ -235,8 +238,29 @@ main{
         justify-content: center;
         flex-wrap: wrap;
         gap: 30px;
-        img{
-            width: 150px;
+        .affiche{
+            cursor: pointer;
+            margin-bottom: 24px;
+        }
+        .hidden_div{
+            width: 200px;
+            height: 300px;
+            overflow: hidden;
+            border-radius: 6px;
+            position: relative;
+        }
+        .affiche_film{
+            width: 200px;
+            transition: transform 0.3s ease;
+        }
+        .affiche_film:hover{
+            transform: scale(1.1);
+        }
+        .button_play{
+            position: absolute;
+            width: 60px;
+            top: 120px;
+            left: 70px;
         }
         .button{
             background-color: var(--primaryColor);
@@ -246,10 +270,10 @@ main{
             justify-content: center;
             align-items: center;
             border-radius: 10px;
-            margin-top: 10px;
             text-align: center;
             transition: transform 0.3s ease;
             cursor: pointer;
+            margin-top: 16px;
         }
         .button:hover{
             background-color: var(--white);

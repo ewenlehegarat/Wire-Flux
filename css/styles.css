@@ -209,6 +209,9 @@ main {
 .slider .slider_image .bouton_droite {
   margin-left: 30px;
 }
+.slider .slider_image img {
+  cursor: pointer;
+}
 .slider img {
   width: 30px;
 }
@@ -224,8 +227,29 @@ main {
   flex-wrap: wrap;
   gap: 30px;
 }
-.films .films_flex img {
-  width: 150px;
+.films .films_flex .affiche {
+  cursor: pointer;
+  margin-bottom: 24px;
+}
+.films .films_flex .hidden_div {
+  width: 200px;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 6px;
+  position: relative;
+}
+.films .films_flex .affiche_film {
+  width: 200px;
+  transition: transform 0.3s ease;
+}
+.films .films_flex .affiche_film:hover {
+  transform: scale(1.1);
+}
+.films .films_flex .button_play {
+  position: absolute;
+  width: 60px;
+  top: 120px;
+  left: 70px;
 }
 .films .films_flex .button {
   background-color: var(--primaryColor);
@@ -235,10 +259,10 @@ main {
   justify-content: center;
   align-items: center;
   border-radius: 10px;
-  margin-top: 10px;
   text-align: center;
   transition: transform 0.3s ease;
   cursor: pointer;
+  margin-top: 16px;
 }
 .films .films_flex .button:hover {
   background-color: var(--white);
