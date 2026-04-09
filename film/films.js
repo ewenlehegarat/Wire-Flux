@@ -47,7 +47,6 @@ async function getFilms() {
         buttonPlay.addEventListener('mouseout', ()=>{
             buttonPlay.src = '../img/button_play.png'
         })
-
         hiddenDiv.addEventListener('mouseover', ()=>{
             buttonPlay.style.visibility = 'visible'
             buttonPlay.style.opacity = '1'
