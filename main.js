@@ -1,23 +1,3 @@
-const buttonGauche = document.querySelector('.bouton_gauche')
-const buttonDroite = document.querySelector('.bouton_droite')
-
-buttonGauche.addEventListener('mouseover', function(){
-    buttonGauche.src = 'img/button_gauche_hover.png'
-})
-
-buttonGauche.addEventListener('mouseout', function(){
-    buttonGauche.src = 'img/bouton_gauche.png'
-})
-
-
-buttonDroite.addEventListener('mouseover', function(){
-    buttonDroite.src = 'img/button_droite_hover.png'
-})
-
-buttonDroite.addEventListener('mouseout', function(){
-    buttonDroite.src = 'img/button_droite.png'
-})
-
 const API_KEY = 'f4cae5139d261865910d98b7d08d4181'
 
 async function getFilms() {
@@ -100,6 +80,7 @@ if(window.innerWidth <= 1199){
             imageOrangeIsTheNewBlack.style.height = '30px'
             imageMandalorian.style.objectPosition = '50% 100%'
             imageOrangeIsTheNewBlack.style.objectPosition = '50% 15%'
+            imageTheRookie.style.objectPosition = '50% 7%'
         }
     })
     imageOrangeIsTheNewBlack.addEventListener('click', ()=>{
@@ -109,6 +90,7 @@ if(window.innerWidth <= 1199){
             imageOrangeIsTheNewBlack.style.height = '125px'
             imageMandalorian.style.objectPosition = '50% 15%'
             imageOrangeIsTheNewBlack.style.objectPosition = '50% 100%'
+            imageTheRookie.style.objectPosition = '50% 7%'
         }
     })
 
@@ -126,6 +108,7 @@ if(window.innerWidth <= 1199){
             imageTheRookie.style.width = '100px'
             imageMandalorian.style.width = '890px'
             imageOrangeIsTheNewBlack.style.width = '100px'
+            imageTheRookie.style.objectPosition = '52% 50%'
         }
     })
 
