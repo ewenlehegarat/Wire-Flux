@@ -120,3 +120,9 @@ if(window.innerWidth <= 1199){
         }
     })
 }
+
+document.querySelector('.button_depliant').addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') {
+        document.querySelector('#burger').checked = !document.querySelector('#burger').checked;
+    }
+});

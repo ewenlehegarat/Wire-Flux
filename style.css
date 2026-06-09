@@ -12,6 +12,17 @@
     --primaryColor : #7D43AF;
     --black: #000000;
     --white: #ffffff;
+
+    h1{
+        font-family: 'Jacques Francois';
+        font-size: 30px;
+        font-weight: 500;
+        margin-left: 10px;
+    }
+    a{
+        text-decoration: none;
+        color: var(--white);
+    }
 }
 
 body{
@@ -62,38 +73,24 @@ header{
         }
     }
     label{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30px;
         cursor: pointer;
     }
     nav{
+        input{
+            width: 30px;
+            display: none;
+        }
         a{
             display: none;
         }
     }
 }
 
-h1{
-    font-family: 'Jacques Francois';
-    font-size: 30px;
-    font-weight: 500;
-    margin-left: 10px;
-}
 
-a{
-    text-decoration: none;
-    color: var(--white);
-}
-
-nav input{
-    width: 30px;
-    display: none;
-}
-
-label{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 30px;
-}
 
 .button_depliant{
     width: 25px;
@@ -140,21 +137,27 @@ label{
         background-color: var(--primaryColor);
         width: 100%;
         position: relative;
+        
         a{
             font-size: 30px;
             color: var(--white);
+            cursor: pointer;
+            z-index: 31;
         }
+    }
+    div:hover a{
+        color: var(--primaryColor);
     }
     div:after{
         content: "";
         background-color: var(--white);
         width: 100%;
-        height: 80px;
+        height: 0;
         position: absolute;
-        display: none;
+        transition: height ease-out 500ms;
     }
     div:hover:after{
-        display: block;
+        height: 80px;
     }
     .s_inscrire{
         a{
