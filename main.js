@@ -9,7 +9,6 @@ buttonGauche.addEventListener('mouseout', function(){
     buttonGauche.src = 'img/bouton_gauche.png'
 })
 
-
 buttonDroite.addEventListener('mouseover', function(){
     buttonDroite.src = 'img/button_droite_hover.png'
 })
