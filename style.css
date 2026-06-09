@@ -202,21 +202,31 @@ header input:checked + .button_depliant span:nth-child(3) {
 }
 
 main{
-    padding: 50px 32px 0 32px;
-
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 50px 16px 0 16px;
+    
+    h3{
+        font-size: 25px;
+        font-weight: 600;
+        margin-left: 8px;
+    }
     .slider{
         width: 100%;
         border-radius: 4px;
         display: flex;
         align-items: center;
-        padding: 8px;
         position: relative;
+        border-radius: 8px;
 
         #slider_image{
             width: 100%;
-            border-radius: 4px;
+            border-radius: 8px;
         }
         .slider_absolute{
+            width: 100%;
+            height: 100%;
             position: absolute;
             display: flex;
             align-items: center;
@@ -231,17 +241,15 @@ main{
         }
     }
     .films{
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
 
-        h3{
-            font-size: 25px;
-            font-weight: 600;
-            margin-bottom: 24px;
-        }
         .films_flex{
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 30px;
+            gap: 16px;
 
             .affiche{
                 display: flex;
@@ -249,7 +257,7 @@ main{
                 align-items: center;
                 width: 200px;
                 cursor: pointer;
-                margin-bottom: 24px;
+                gap: 16px;
                 
                 .hidden_div{
                     width: 100%;
@@ -279,6 +287,10 @@ main{
                 translate: -50% -50%;
                 transition: opacity ease 750ms;
             }
+            .hidden_div:hover .button_play{
+                opacity: 1;
+                visibility: visible;
+            }
             .button{
                 background-color: var(--primaryColor);
                 padding: 12px 16px;
@@ -289,12 +301,12 @@ main{
                 text-align: center;
                 transition: transform 0.3s ease;
                 cursor: pointer;
-                margin-top: 16px;
             }
             .button:hover{
                 background-color: var(--white);
                 box-shadow: 0 4px 10px var(--primaryColor), 0 4px 10px var(--primaryColor);
                 transform: translateY(-5px);
+                
                 a{
                     color: var(--black);
                 }
@@ -305,19 +317,17 @@ main{
         }
     }
     .series{
-        margin-top: 34px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
 
-        h3{
-            font-size: 24px;
-            font-weight: 600;
-            margin-bottom: 11px;
-        }
         .selection_series{
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            gap: 7.63px;
+            gap: 8px;
+            padding: 0 16px;
 
             img{
                 border-radius: 8px;
@@ -329,12 +339,15 @@ main{
                 transition: height ease 500ms;
                 cursor: pointer;
             }
+            .the_rookie{
+                object-position: 50% 20%;
+            }
             .orange_is_the_new_black{
-                object-position: 95% 15%;
+                object-position: 50% 15%;
                 height: 30px;
             }
             .the_mandalorian{
-                object-position: 44.5% 15%;
+                object-position: 50% 15%;
                 height: 30px;
             }
         }
@@ -345,6 +358,7 @@ footer{
     margin-top: 206px;
     background-color: var(--primaryColor);
     padding: 20px;
+
     .logo_footer{
         display: flex;
         align-items: center;

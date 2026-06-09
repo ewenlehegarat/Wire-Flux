@@ -4,6 +4,7 @@ async function getFilms() {
   try{
     const response = await fetch(`https://api.themoviedb.org/3/trending/movie/week?api_key=${API_KEY}&language=fr-FR`)
     const data = await response.json()
+
     data.results.slice(0, 5).forEach(film => {
         const imgUrl = film.poster_path
         ? `https://image.tmdb.org/t/p/w500${film.poster_path}`
@@ -42,15 +43,6 @@ async function getFilms() {
         buttonPlay.addEventListener('mouseout', ()=>{
             buttonPlay.src = '../img/button_play.png'
         })
-
-        hiddenDiv.addEventListener('mouseover', ()=>{
-            buttonPlay.style.visibility = 'visible'
-            buttonPlay.style.opacity = '1'
-        })
-        hiddenDiv.addEventListener('mouseout', ()=>{
-            buttonPlay.style.visibility = 'hidden'
-            buttonPlay.style.opacity = '0'
-        })
     })
   }catch(error){
     console.error('Erreur lors du chargement des films :', error)
@@ -70,7 +62,7 @@ if(window.innerWidth <= 1199){
             imageMandalorian.style.height = '30px'
             imageOrangeIsTheNewBlack.style.height = '30px'
             imageMandalorian.style.objectPosition = '50% 15%'
-            imageOrangeIsTheNewBlack.style.objectPosition = '50% 15%'
+            imageOrangeIsTheNewBlack.style.objectPosition = '50% 20%'
         }
     })
     imageMandalorian.addEventListener('click', ()=>{
@@ -78,7 +70,7 @@ if(window.innerWidth <= 1199){
             imageTheRookie.style.height = '30px'
             imageMandalorian.style.height = '125px'
             imageOrangeIsTheNewBlack.style.height = '30px'
-            imageMandalorian.style.objectPosition = '50% 100%'
+            imageMandalorian.style.objectPosition = '50% 85%'
             imageOrangeIsTheNewBlack.style.objectPosition = '50% 15%'
             imageTheRookie.style.objectPosition = '50% 7%'
         }
@@ -89,7 +81,7 @@ if(window.innerWidth <= 1199){
             imageMandalorian.style.height = '30px'
             imageOrangeIsTheNewBlack.style.height = '125px'
             imageMandalorian.style.objectPosition = '50% 15%'
-            imageOrangeIsTheNewBlack.style.objectPosition = '50% 100%'
+            imageOrangeIsTheNewBlack.style.objectPosition = '50% 85%'
             imageTheRookie.style.objectPosition = '50% 7%'
         }
     })
