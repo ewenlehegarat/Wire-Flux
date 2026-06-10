@@ -42,6 +42,7 @@ header{
     .logo{
         display: flex;
         align-items: center;
+        
         img{
             width: 50px;
         }
@@ -49,6 +50,7 @@ header{
     .left{
         .list_a{
             display: none;
+            
             div{
                 a{
                     color: var(--white);
@@ -362,6 +364,7 @@ footer{
     .logo_footer{
         display: flex;
         align-items: center;
+
         img{
             width: 50px;
         }
@@ -385,6 +388,7 @@ footer{
         .left{
             display: flex;
             align-items: center;
+
             .logo{
                 img{
                     width: 100%;
@@ -394,6 +398,7 @@ footer{
                 display: flex;
                 align-items: center;
                 gap: 20px;
+
                 .nav_home{
                     margin-left: 42px;
                     border-bottom: 3px solid var(--white);
@@ -405,6 +410,7 @@ footer{
                     justify-content: center;
                     cursor: pointer;
                     align-items: center;
+
                     a{
                         font-size: 20px;
                     }
@@ -414,6 +420,7 @@ footer{
         nav{
             display: flex;
             align-items: center;
+
             .inscrire{
                 font-size: 17px;
                 font-weight: 600;
@@ -493,6 +500,7 @@ footer{
     }
     footer{
         padding: 57px 64px;
+
         .logo_footer{
             img{
                 width: 63px;

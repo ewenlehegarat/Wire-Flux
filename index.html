@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./img/logo_img.png">
     <title>Wireflux</title>
     <meta name="theme-color" content="#4A2082">
+    <link rel="icon" href="./img/logo_img.png">
     <link rel="stylesheet" href="style.css">
     <script src="main.js" defer></script>
 </head>
@@ -16,29 +16,29 @@
     <header>
         <div class="left">
             <div class="logo">
-                <img src="img/logo_img.png" alt="logo_image">
+                <img src="./img/logo_img.png" alt="image du logo de wireflux">
                 <h1>WireFlux</h1>
             </div>
             <div class="list_a">
                 <div class="nav_home">
-                    <a href="#main">Home</a>
+                    <a href="./index.html">Home</a>
                 </div>
                 <div class="nav_film">
-                    <a href="film/films.html">Films</a>
+                    <a href="./film/films.html">Films</a>
                 </div>
                 <div class="nav_serie">
-                    <a href="">Séries</a>
+                    <a href="./serie/serie.html">Séries</a>
                 </div>
                 <div class="nav_anime">
-                    <a href="">Animé</a>
+                    <a href="./anime/anime.html">Animé</a>
                 </div>
             </div>
         </div>
         <nav>
-            <a href="" class="inscrire">S'inscrire</a>
-            <a href="" class="connecter">Se connecter</a>
+            <a href="./login/login.html" class="inscrire">S'inscrire</a>
+            <a href="./login/login.html" class="connecter">Se connecter</a>
             <input id="burger" type="checkbox">
-            <label for="burger" class="button_depliant" tabindex="0" aria-label="Description" role="button">
+            <label for="burger" class="button_depliant" tabindex="0" aria-label="Description">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -48,63 +48,64 @@
 
     <div class="display">
         <div class="home">
-            <a href="#">Home</a>
+            <a href="./index.html">Home</a>
         </div>
         <div class="film">
-            <a href="#">Films</a>
+            <a href="./film/films.html">Films</a>
         </div>
         <div class="serie">
-            <a href="#">Séries</a>
+            <a href="./serie/serie.html">Séries</a>
         </div>
         <div class="anime">
-            <a href="#">Animé</a>
+            <a href="./anime/anime.html">Animé</a>
         </div>
         <div class="s_inscrire">
-            <a href="#">S'incrire</a>
+            <a href="./login/login.html">S'incrire</a>
         </div>
         <div class="se_connecter">
-            <a href="#">Se connecter</a>
+            <a href="./login/login.html">Se connecter</a>
         </div>
     </div>
 
     <main>
         <div class="slider">
-            <img src="./img/slider_film_1.png" alt="" id="slider_image">
-
+            <img src="./img/slider_film_1.png" alt="slider des affiches de films" id="slider_image">
             <div class="slider_absolute">
-                <img src="img/bouton_gauche.png" alt="bouton slider gauche" class="bouton_gauche">
+                <img src="./img/bouton_gauche.png" alt="bouton du slider gauche" class="bouton_gauche">
                 <p>Demon slayer: Kimetsu no Yaiba La Forteresse Infinie</p>
-                <img src="img/button_droite.png" alt="bouton slider droite" class="bouton_droite">
+                <img src="./img/button_droite.png" alt="bouton du slider droite" class="bouton_droite">
             </div>
         </div>
         <div class="films">
-            <h3>Films :</h3>
+            <h2>Films :</h2>
             <div class="films_flex">
             </div>
         </div>
         <div class="series">
             <h3>Séries :</h3>
             <div class="selection_series">
-                <img src="img/the_rookie.png" alt="affiche série the rookie" class="the_rookie">
-                <img src="img/the_mandalorian.png" alt="affiche série the mandalorian" class="the_mandalorian">
-                <img src="img/orange_is_the_new_black.png" alt="affiche série orange is the new black" class="orange_is_the_new_black">
+                <img src="./img/the_rookie.png" alt="image d'affiche série the rookie" class="the_rookie">
+                <img src="./img/the_mandalorian.png" alt="image d'affiche série the mandalorian" class="the_mandalorian">
+                <img src="./img/orange_is_the_new_black.png" alt="image d'affiche série orange is the new black" class="orange_is_the_new_black">
             </div>
         </div>
     </main>
     
     <footer>
         <div class="logo_footer">
-            <img src="img/logo_img.png" alt="logo de wireflux en bas de page">
+            <img src="./img/logo_img.png" alt="image du logo de wireflux">
             <h4>WireFlux</h4>
         </div>
-        <p>Ce site ne stocke aucun fichier vidéo.
-        Les films disponibles sont fournis par
-        des plateformes de lecture externes et
-        indépendantes de notre site. Nous ne
-        possédons pas les droits d’auteur de
-        ces films et ne sommes impliqués ni
-        dans leur mise en ligne ni dans leur
-        diffusion.</p>
+        <p>
+            Ce site ne stocke aucun fichier vidéo.
+            Les films disponibles sont fournis par
+            des plateformes de lecture externes et
+            indépendantes de notre site. Nous ne
+            possédons pas les droits d’auteur de
+            ces films et ne sommes impliqués ni
+            dans leur mise en ligne ni dans leur
+            diffusion.
+        </p>
     </footer>
 
 </body>
