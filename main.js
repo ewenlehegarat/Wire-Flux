@@ -38,11 +38,28 @@ async function getFilms() {
         hiddenDiv.appendChild(buttonPlay)
 
         buttonPlay.addEventListener('mouseover', ()=>{
-            buttonPlay.src = '../img/button_play_hover.png'
+            buttonPlay.src = './img/button_play_hover.png'
         })
         buttonPlay.addEventListener('mouseout', ()=>{
-            buttonPlay.src = '../img/button_play.png'
+            buttonPlay.src = './img/button_play.png'
         })
+        
+        const buttonSliderGauche = document.querySelector('.bouton_gauche')
+        buttonSliderGauche.addEventListener('mouseover', ()=>{
+            buttonSliderGauche.src = './img/button_gauche_hover.png'
+        })
+        buttonSliderGauche.addEventListener('mouseout', ()=>{
+            buttonSliderGauche.src = './img/button_gauche.png'
+        })
+        
+        const buttonSliderDroite = document.querySelector('.bouton_droite')
+        buttonSliderDroite.addEventListener('mouseover', ()=>{
+            buttonSliderDroite.src = './img/button_droite_hover.png'
+        })
+        buttonSliderDroite.addEventListener('mouseout', ()=>{
+            buttonSliderDroite.src = './img/button_droite.png'
+        })
+        
     })
   }catch(error){
     console.error('Erreur lors du chargement des films :', error)
@@ -54,19 +71,33 @@ const imageTheRookie = document.querySelector('.the_rookie')
 const imageMandalorian = document.querySelector('.the_mandalorian')
 const imageOrangeIsTheNewBlack = document.querySelector('.orange_is_the_new_black')
 
-if(window.innerWidth <= 1199){
-    
-    imageTheRookie.addEventListener('click', ()=>{
-        if(imageTheRookie.style.height = '125px'){
+function updateSeriesBehavior() {
+    if (!imageTheRookie || !imageMandalorian || !imageOrangeIsTheNewBlack) {
+        return
+    }
+
+    const isMobile = window.innerWidth <= 1165
+
+    if (isMobile) {
+        imageTheRookie.style.width = '100%'
+        imageMandalorian.style.width = '100%'
+        imageOrangeIsTheNewBlack.style.width = '100%'
+        imageTheRookie.style.height = '125px'
+        imageMandalorian.style.height = '30px'
+        imageOrangeIsTheNewBlack.style.height = '30px'
+        imageTheRookie.style.objectPosition = '50% 20%'
+        imageMandalorian.style.objectPosition = '50% 15%'
+        imageOrangeIsTheNewBlack.style.objectPosition = '50% 15%'
+        
+        imageTheRookie.onclick = () => {
             imageTheRookie.style.height = '125px'
             imageMandalorian.style.height = '30px'
             imageOrangeIsTheNewBlack.style.height = '30px'
             imageMandalorian.style.objectPosition = '50% 15%'
             imageOrangeIsTheNewBlack.style.objectPosition = '50% 20%'
         }
-    })
-    imageMandalorian.addEventListener('click', ()=>{
-        if(imageMandalorian.style.height = '125px'){
+
+        imageMandalorian.onclick = () => {
             imageTheRookie.style.height = '30px'
             imageMandalorian.style.height = '125px'
             imageOrangeIsTheNewBlack.style.height = '30px'
@@ -74,9 +105,8 @@ if(window.innerWidth <= 1199){
             imageOrangeIsTheNewBlack.style.objectPosition = '50% 15%'
             imageTheRookie.style.objectPosition = '50% 7%'
         }
-    })
-    imageOrangeIsTheNewBlack.addEventListener('click', ()=>{
-        if(imageOrangeIsTheNewBlack.style.height = '125px'){
+
+        imageOrangeIsTheNewBlack.onclick = () => {
             imageTheRookie.style.height = '30px'
             imageMandalorian.style.height = '30px'
             imageOrangeIsTheNewBlack.style.height = '125px'
@@ -84,37 +114,37 @@ if(window.innerWidth <= 1199){
             imageOrangeIsTheNewBlack.style.objectPosition = '50% 85%'
             imageTheRookie.style.objectPosition = '50% 7%'
         }
-    })
+    } else {
+        imageTheRookie.style.height = '400px'
+        imageMandalorian.style.height = '400px'
+        imageOrangeIsTheNewBlack.style.height = '400px'
+        imageTheRookie.style.width = '890px'
+        imageMandalorian.style.width = '100px'
+        imageOrangeIsTheNewBlack.style.width = '100px'
+        imageTheRookie.style.objectPosition = '50% 50%'
+        imageMandalorian.style.objectPosition = '45% 50%'
+        imageOrangeIsTheNewBlack.style.objectPosition = '95% 50%'
 
-}else{
-    imageTheRookie.addEventListener('click', ()=>{
-    if(imageTheRookie.style.width = '100px'){
+        imageTheRookie.onclick = () => {
             imageTheRookie.style.width = '890px'
             imageMandalorian.style.width = '100px'
             imageOrangeIsTheNewBlack.style.width = '100px'
         }
-    })
 
-    imageMandalorian.addEventListener('click', ()=>{
-        if(imageMandalorian.style.width = '100px'){
+        imageMandalorian.onclick = () => {
             imageTheRookie.style.width = '100px'
             imageMandalorian.style.width = '890px'
             imageOrangeIsTheNewBlack.style.width = '100px'
             imageTheRookie.style.objectPosition = '52% 50%'
         }
-    })
 
-    imageOrangeIsTheNewBlack.addEventListener('click', ()=>{
-        if(imageOrangeIsTheNewBlack.style.width = '100px'){
+        imageOrangeIsTheNewBlack.onclick = () => {
             imageTheRookie.style.width = '100px'
             imageMandalorian.style.width = '100px'
             imageOrangeIsTheNewBlack.style.width = '890px'
         }
-    })
+    }
 }
 
-document.querySelector('.button_depliant').addEventListener('keydown', function (e) {
-    if (e.key === 'Enter') {
-        document.querySelector('#burger').checked = !document.querySelector('#burger').checked;
-    }
-});
+window.addEventListener('resize', updateSeriesBehavior)
+updateSeriesBehavior()

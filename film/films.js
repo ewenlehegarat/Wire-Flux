@@ -8,11 +8,6 @@ async function getFilms() {
         const imgUrl = film.poster_path
         ? `https://image.tmdb.org/t/p/w500${film.poster_path}`
         : "Pas d'affiche";
-      
-        console.log("Titre :", film.title)
-        console.log("Description :", film.overview)
-        console.log("Note :", film.vote_average)
-        console.log("Affiche :", imgUrl)
 
         const afficheFilm = document.createElement('div')
         afficheFilm.classList.add('affiche')

@@ -86,21 +86,70 @@ a{
     color: var(--white);
 }
 
-nav input{
-    width: 30px;
-    display: none;
-}
-
-label{
+header{
+    background-color: var(--primaryColor);
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    width: 30px;
+    height: 80px;
+    padding: 17px 16px;
+
+    .logo{
+        display: flex;
+        align-items: center;
+        
+        img{
+            width: 50px;
+        }
+    }
+    .left{
+        .list_a{
+            display: none;
+            
+            div{
+                a{
+                    color: var(--white);
+                    z-index: 2;
+                }
+            }
+            .nav_film:hover a, .nav_serie:hover a, .nav_anime:hover a{
+                color: var(--primaryColor);
+            }
+            div:after{
+                content: "";
+                width: 80px;
+                height: 80px;
+                background-color: var(--white);
+                top: -80px;
+                position: absolute;
+                transition: transform 0.4s ease;
+            }
+            .nav_film:hover:after, .nav_serie:hover:after, .nav_anime:hover:after{
+                transform: translateY(80px);
+            }
+        }
+    }
+    label{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30px;
+        cursor: pointer;
+    }
+    nav{
+        input{
+            width: 30px;
+            display: none;
+        }
+        a{
+            display: none;
+        }
+    }
 }
 
 .button_depliant{
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 20px;
     position: relative;
 
     span{
@@ -113,23 +162,25 @@ label{
         right: 0;
     }
     span:nth-child(1){
-        top: 5px;
+        top: 0;
     }
     span:nth-child(3){
-        bottom: 5px;
+        bottom: 0;
     }
 } 
 
 .display{
-    z-index: 998;
     width: 100%;
     position: absolute;
+    top: 80px;
+    left: -100%;
+    display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    top: -100%;
-    transition: top ease-in 300ms;
-    
+    transition: left ease-out 500ms;
+    z-index: 50;
+
     .home{
         border-bottom: 2px solid var(--white);
     }
@@ -141,21 +192,27 @@ label{
         background-color: var(--primaryColor);
         width: 100%;
         position: relative;
+        
         a{
             font-size: 30px;
             color: var(--white);
+            cursor: pointer;
+            z-index: 31;
         }
+    }
+    div:hover a{
+        color: var(--primaryColor);
     }
     div:after{
         content: "";
         background-color: var(--white);
         width: 100%;
-        height: 80px;
+        height: 0;
         position: absolute;
-        display: none;
+        transition: height ease-out 500ms;
     }
     div:hover:after{
-        display: block;
+        height: 80px;
     }
     .s_inscrire{
         a{
@@ -182,7 +239,7 @@ label{
 }
 
 header:has(input:checked) ~ .display{
-    top: 80px;
+    left: 0;
 }
 
 header input:checked + .button_depliant span:nth-child(1) {
