@@ -70,79 +70,59 @@ getFilms()
 const imageTheRookie = document.querySelector('.the_rookie')
 const imageMandalorian = document.querySelector('.the_mandalorian')
 const imageOrangeIsTheNewBlack = document.querySelector('.orange_is_the_new_black')
+const seriesImages = [imageTheRookie, imageMandalorian, imageOrangeIsTheNewBlack]
 
+function applySeriesStyles(styles) {
+    // pour chaque image de selection series
+    seriesImages.forEach((image, index) => {
+        // assigne les styles des images pour chaque image de selection series
+        Object.assign(image.style, styles[index])
+    })
+}
 function updateSeriesBehavior() {
-    if (!imageTheRookie || !imageMandalorian || !imageOrangeIsTheNewBlack) {
-        return
-    }
-
     const isMobile = window.innerWidth <= 1165
-
     if (isMobile) {
-        imageTheRookie.style.width = '100%'
-        imageMandalorian.style.width = '100%'
-        imageOrangeIsTheNewBlack.style.width = '100%'
-        imageTheRookie.style.height = '125px'
-        imageMandalorian.style.height = '30px'
-        imageOrangeIsTheNewBlack.style.height = '30px'
-        imageTheRookie.style.objectPosition = '50% 20%'
-        imageMandalorian.style.objectPosition = '50% 15%'
-        imageOrangeIsTheNewBlack.style.objectPosition = '50% 15%'
-        
-        imageTheRookie.onclick = () => {
-            imageTheRookie.style.height = '125px'
-            imageMandalorian.style.height = '30px'
-            imageOrangeIsTheNewBlack.style.height = '30px'
-            imageMandalorian.style.objectPosition = '50% 15%'
-            imageOrangeIsTheNewBlack.style.objectPosition = '50% 20%'
-        }
-
-        imageMandalorian.onclick = () => {
-            imageTheRookie.style.height = '30px'
-            imageMandalorian.style.height = '125px'
-            imageOrangeIsTheNewBlack.style.height = '30px'
-            imageMandalorian.style.objectPosition = '50% 85%'
-            imageOrangeIsTheNewBlack.style.objectPosition = '50% 15%'
-            imageTheRookie.style.objectPosition = '50% 7%'
-        }
-
-        imageOrangeIsTheNewBlack.onclick = () => {
-            imageTheRookie.style.height = '30px'
-            imageMandalorian.style.height = '30px'
-            imageOrangeIsTheNewBlack.style.height = '125px'
-            imageMandalorian.style.objectPosition = '50% 15%'
-            imageOrangeIsTheNewBlack.style.objectPosition = '50% 85%'
-            imageTheRookie.style.objectPosition = '50% 7%'
-        }
+        applySeriesStyles([
+            { width: '100%', height: '125px', objectPosition: '50% 20%' },
+            { width: '100%', height: '30px', objectPosition: '50% 15%' },
+            { width: '100%', height: '30px', objectPosition: '50% 15%' }
+        ])
+        imageTheRookie.onclick = () => applySeriesStyles([
+            { height: '125px' },
+            { height: '30px', objectPosition: '50% 15%' },
+            { height: '30px', objectPosition: '50% 20%' }
+        ])
+        imageMandalorian.onclick = () => applySeriesStyles([
+            { height: '30px', objectPosition: '50% 7%' },
+            { height: '125px', objectPosition: '50% 85%' },
+            { height: '30px', objectPosition: '50% 15%' }
+        ])
+        imageOrangeIsTheNewBlack.onclick = () => applySeriesStyles([
+            { height: '30px', objectPosition: '50% 7%' },
+            { height: '30px', objectPosition: '50% 15%' },
+            { height: '125px', objectPosition: '50% 85%' }
+        ])
     } else {
-        imageTheRookie.style.height = '400px'
-        imageMandalorian.style.height = '400px'
-        imageOrangeIsTheNewBlack.style.height = '400px'
-        imageTheRookie.style.width = '890px'
-        imageMandalorian.style.width = '100px'
-        imageOrangeIsTheNewBlack.style.width = '100px'
-        imageTheRookie.style.objectPosition = '50% 50%'
-        imageMandalorian.style.objectPosition = '45% 50%'
-        imageOrangeIsTheNewBlack.style.objectPosition = '95% 50%'
-
-        imageTheRookie.onclick = () => {
-            imageTheRookie.style.width = '890px'
-            imageMandalorian.style.width = '100px'
-            imageOrangeIsTheNewBlack.style.width = '100px'
-        }
-
-        imageMandalorian.onclick = () => {
-            imageTheRookie.style.width = '100px'
-            imageMandalorian.style.width = '890px'
-            imageOrangeIsTheNewBlack.style.width = '100px'
-            imageTheRookie.style.objectPosition = '52% 50%'
-        }
-
-        imageOrangeIsTheNewBlack.onclick = () => {
-            imageTheRookie.style.width = '100px'
-            imageMandalorian.style.width = '100px'
-            imageOrangeIsTheNewBlack.style.width = '890px'
-        }
+        applySeriesStyles([
+            { height: '400px', width: '890px', objectPosition: '50% 50%' },
+            { height: '400px', width: '100px', objectPosition: '45% 50%' },
+            { height: '400px', width: '100px', objectPosition: '95% 50%' }
+        ])
+        imageTheRookie.onclick = () => applySeriesStyles([
+            { width: '890px' },
+            { width: '100px' },
+            { width: '100px' }
+        ])
+        imageMandalorian.onclick = () => applySeriesStyles([
+            { width: '100px', objectPosition: '52% 50%' },
+            { width: '890px' },
+            { width: '100px' }
+        ])
+        imageOrangeIsTheNewBlack.onclick = () => applySeriesStyles([
+            { width: '100px' },
+            { width: '100px' },
+            { width: '890px' }
+        ])
     }
 }
 

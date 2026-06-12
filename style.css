@@ -334,7 +334,6 @@ main{
             justify-content: center;
             align-items: center;
             gap: 8px;
-            padding: 0 16px;
 
             img{
                 border-radius: 8px;
