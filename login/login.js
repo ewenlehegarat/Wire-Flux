@@ -1,7 +1,7 @@
 const buttonInscription = document.querySelector('.sinscrire');
 const buttonConnection = document.querySelector('.seconnecter');
-const formulaireInscription = document.querySelector('.formulaire_inscription')
-const formulaireConnection = document.querySelector('.formulaire_connection')
+const formulaireInscription = document.querySelector('.formulaire_inscription');
+const formulaireConnection = document.querySelector('.formulaire_connection');
 
 buttonInscription.addEventListener('click', () =>{
     if(buttonConnection.style.zIndex = 2){
@@ -19,3 +19,7 @@ buttonConnection.addEventListener('click', () =>{
         formulaireInscription.style.display = "none"
     };
 });
+
+
+
+

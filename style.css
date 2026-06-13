@@ -39,15 +39,15 @@ header{
     height: 80px;
     padding: 17px 16px;
 
-    .logo{
-        display: flex;
-        align-items: center;
-        
-        img{
-            width: 50px;
-        }
-    }
     .left{
+        .logo{
+            display: flex;
+            align-items: center;
+            
+            img{
+                width: 50px;
+            }
+        }
         .list_a{
             display: none;
             
@@ -451,6 +451,10 @@ footer{
         }
     }
 
+    .display{
+        display: none;
+    }
+
     h1{
         font-size: 35px;
     }
@@ -460,7 +464,7 @@ footer{
     }
 
     main{
-        padding: 50px 32px 0 32px;
+        padding: 50px 128px 0 128px;
 
         .slider{
             .slider_absolute{

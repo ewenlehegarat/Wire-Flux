@@ -260,7 +260,7 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 32px;
+    padding-top: 64px;
 
     .login{
         background-color: var(--primaryColor);
