@@ -23,6 +23,7 @@ async function getFilms() {
         afficheImg.src = imgUrl
         afficheImg.alt = `affiche ${film.title} image`
         afficheImg.ariaHidden = 'true'
+        afficheImg.title = `Film ${film.title}`
         hiddenDiv.appendChild(afficheImg)
 
         const titreFilm = document.createElement('h4')
@@ -35,6 +36,7 @@ async function getFilms() {
         const buttonPlay = document.createElement('img')
         buttonPlay.src = '../img/button_play.png'
         buttonPlay.classList.add('button_play')
+        buttonPlay.title = 'Play'
         hiddenDiv.appendChild(buttonPlay)
 
         buttonPlay.addEventListener('mouseover', ()=>{
