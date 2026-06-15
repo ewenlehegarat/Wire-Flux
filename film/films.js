@@ -22,9 +22,10 @@ async function getFilms() {
         afficheImg.classList.add('affiche_film')
         afficheImg.src = imgUrl
         afficheImg.alt = `affiche ${film.title} image`
+        afficheImg.ariaHidden = 'true'
         hiddenDiv.appendChild(afficheImg)
 
-        const titreFilm = document.createElement('a')
+        const titreFilm = document.createElement('h4')
         titreFilm.textContent = film.title
         divButton.appendChild(titreFilm)
 

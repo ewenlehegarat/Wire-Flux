@@ -22,9 +22,10 @@ async function getSeries() {
         afficheImg.classList.add('affiche_serie')
         afficheImg.src = imgUrl
         afficheImg.alt = `affiche ${serie.title} image`
+        afficheImg.ariaHidden = 'true'
         hiddenDiv.appendChild(afficheImg)
 
-        const titreSerie = document.createElement('a')
+        const titreSerie = document.createElement('h4')
         titreSerie.textContent = serie.title
         divButton.appendChild(titreSerie)
 
