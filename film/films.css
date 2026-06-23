@@ -325,7 +325,7 @@ main{
             box-shadow: 0 4px 10px var(--primaryColor), 0 4px 10px var(--primaryColor);
             transform: translateY(-5px);
 
-            a{
+            h4{
                 color: var(--black);
             }
         }

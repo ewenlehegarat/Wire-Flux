@@ -22,9 +22,11 @@ async function getSeries() {
         afficheImg.classList.add('affiche_serie')
         afficheImg.src = imgUrl
         afficheImg.alt = `affiche ${serie.title} image`
+        afficheImg.ariaHidden = 'true'
+        afficheImg.title = `Séries ${serie.title}`
         hiddenDiv.appendChild(afficheImg)
 
-        const titreSerie = document.createElement('a')
+        const titreSerie = document.createElement('h4')
         titreSerie.textContent = serie.title
         divButton.appendChild(titreSerie)
 
@@ -34,6 +36,7 @@ async function getSeries() {
         const buttonPlay = document.createElement('img')
         buttonPlay.src = '../img/button_play.png'
         buttonPlay.classList.add('button_play')
+        buttonPlay.title = 'Play'
         hiddenDiv.appendChild(buttonPlay)
 
         buttonPlay.addEventListener('mouseover', ()=>{
