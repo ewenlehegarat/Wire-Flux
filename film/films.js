@@ -34,7 +34,7 @@ async function getFilms() {
         filmFlex.appendChild(afficheFilm)
 
         const buttonPlay = document.createElement('img')
-        buttonPlay.src = '../img/button_play.png'
+        buttonPlay.src = './img/button_play.png'
         buttonPlay.classList.add('button_play')
         buttonPlay.title = 'Play'
         hiddenDiv.appendChild(buttonPlay)
