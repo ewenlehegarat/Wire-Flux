@@ -35,7 +35,7 @@ async function getFilms() {
         filmFlex.appendChild(afficheFilm);
 
         const buttonPlay = document.createElement('img');
-        buttonPlay.src = '../img/button_play.png';
+        buttonPlay.src = './img/button_play.png';
         buttonPlay.classList.add('button_play');
         buttonPlay.title = 'Play'
         buttonPlay.ariaLabel = 'Lancer le film'
@@ -85,8 +85,10 @@ function applySeriesStyles(styles) {
         Object.assign(image.style, styles[index]);
     });
 };
+
 function updateSeriesBehavior() {
     const isMobile = window.innerWidth <= 1165;
+
     if (isMobile) {
         applySeriesStyles([
             { width: '100%', height: '125px', objectPosition: '50% 20%' },

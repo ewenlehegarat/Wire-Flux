@@ -385,9 +385,6 @@ footer{
                 .nav_home{
                     margin-left: 42px;
                 }
-                .nav_film{
-                    border-bottom: 3px solid var(--white);
-                }
                 div{
                     width: 80px;
                     height: 80px;

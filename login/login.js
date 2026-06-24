@@ -19,7 +19,3 @@ buttonConnection.addEventListener('click', () =>{
         formulaireInscription.style.display = "none"
     };
 });
-
-
-
-

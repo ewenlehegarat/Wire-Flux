@@ -40,10 +40,10 @@ async function getSeries() {
         hiddenDiv.appendChild(buttonPlay)
 
         buttonPlay.addEventListener('mouseover', ()=>{
-            buttonPlay.src = '../img/button_play_hover.png'
+            buttonPlay.src = '/img/button_play_hover.png'
         })
         buttonPlay.addEventListener('mouseout', ()=>{
-            buttonPlay.src = '../img/button_play.png'
+            buttonPlay.src = '/img/button_play.png'
         })
         hiddenDiv.addEventListener('mouseover', ()=>{
             buttonPlay.style.visibility = 'visible'
