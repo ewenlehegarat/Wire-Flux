@@ -42,10 +42,10 @@ async function getFilms() {
         hiddenDiv.appendChild(buttonPlay);
 
         buttonPlay.addEventListener('mouseover', ()=>{
-            buttonPlay.src = './img/button_play_hover.png';
+            buttonPlay.src = './img/Button_play_hover.png';
         })
         buttonPlay.addEventListener('mouseout', ()=>{
-            buttonPlay.src = './img/button_play.png';
+            buttonPlay.src = './img/Button_play.png';
         })
         
         const buttonSliderGauche = document.querySelector('.bouton_gauche');
