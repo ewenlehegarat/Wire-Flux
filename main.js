@@ -71,13 +71,14 @@ async function getFilms() {
             { src: "./img/slider_film_2.png", title: "Avatar : de feu et de cendres" },
             { src: "./img/slider_film_3.png", title: "Dune : Deuxième Partie" },
             { src: "./img/slider_film_4.png", title: "Zootopie 2" },
+            { src: "./img/slider_film_5.png", title: "God Save The Tuche" }
         ];
 
         document.querySelectorAll(".slider").forEach((sliderEl) => {
             let currentIndex = 0;
 
             const sliderImage = sliderEl.querySelector("#slider_image");
-            const sliderTitle = sliderEl.querySelector(".slider_absolute h3");
+            const sliderTitle = sliderEl.querySelector(".slider_absolute h2");
             const boutonGauche = sliderEl.querySelector(".bouton_gauche");
             const boutonDroite = sliderEl.querySelector(".bouton_droite");
 
