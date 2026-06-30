@@ -65,7 +65,40 @@ async function getFilms() {
         buttonSliderDroite.addEventListener('mouseout', ()=>{
             buttonSliderDroite.src = './img/button_droite.png';
         });
-        
+
+        const slides = [
+            { src: "./img/slider_film_1.png", title: "Demon Slayer : Kimetsu no Yaiba La Forteresse Infinie" },
+            { src: "./img/slider_film_2.png", title: "Avatar : de feu et de cendres" },
+            { src: "./img/slider_film_3.png", title: "Dune : Deuxième Partie" },
+            { src: "./img/slider_film_4.png", title: "Zootopie 2" },
+        ];
+
+        document.querySelectorAll(".slider").forEach((sliderEl) => {
+            let currentIndex = 0;
+
+            const sliderImage = sliderEl.querySelector("#slider_image");
+            const sliderTitle = sliderEl.querySelector(".slider_absolute h3");
+            const boutonGauche = sliderEl.querySelector(".bouton_gauche");
+            const boutonDroite = sliderEl.querySelector(".bouton_droite");
+
+            function updateSlide() {
+                const slide = slides[currentIndex];
+                sliderImage.src = slide.src;
+                sliderImage.title = slide.title;
+                sliderTitle.textContent = slide.title;
+            }
+
+            boutonDroite.addEventListener("click", () => {
+                currentIndex = (currentIndex + 1) % slides.length;
+                updateSlide();
+            });
+
+            boutonGauche.addEventListener("click", () => {
+                currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                updateSlide();
+            });
+        });
+
     });
   }catch(error){
     console.error('Erreur lors du chargement des films :', error);
