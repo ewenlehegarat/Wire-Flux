@@ -31,7 +31,7 @@ body{
     color: var(--white);
 }
 
-header{
+nav{
     background-color: var(--primaryColor);
     display: flex;
     justify-content: space-between;
@@ -81,7 +81,7 @@ header{
         width: 30px;
         cursor: pointer;
     }
-    nav{
+    .right{
         input{
             width: 30px;
             display: none;
@@ -183,20 +183,20 @@ header{
     }
 }
 
-header:has(input:checked) ~ .display{
+nav:has(input:checked) ~ .display{
     left: 0;
 }
 
-header input:checked + .button_depliant span:nth-child(1) {
+nav input:checked + .button_depliant span:nth-child(1) {
     transform: rotate(45deg);
     top: 50%;
 }
 
-header input:checked + .button_depliant span:nth-child(2) {
+nav input:checked + .button_depliant span:nth-child(2) {
     opacity: 0;
 }
 
-header input:checked + .button_depliant span:nth-child(3) {
+nav input:checked + .button_depliant span:nth-child(3) {
     transform: rotate(-45deg);
     top: 50%;
 }
@@ -388,7 +388,7 @@ footer{
 
 @media screen and (min-width: 1165px){
     
-    header{
+    nav{
         .left{
             display: flex;
             align-items: center;
@@ -421,7 +421,7 @@ footer{
                 }
             }
         }
-        nav{
+        .right{
             display: flex;
             align-items: center;
 
